@@ -1,6 +1,7 @@
 package com.example.booklookapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BooksAdapter extends ArrayAdapter<ABook> {
-    public BooksAdapter(Activity context, ArrayList<ABook> book) {
+    public BooksAdapter(Context context, List<ABook> book) {
         super(context, 0, book);
     }
 
@@ -48,7 +50,7 @@ public class BooksAdapter extends ArrayAdapter<ABook> {
 
         //Set Book Price and Currency Code
         TextView bookPrice = (TextView) listItemView.findViewById(R.id.price);
-        bookPrice.setText(currBook.getCurrencyCodeAndPrice());
+        bookPrice.setText(currBook.getSaleability());
 
 
         return listItemView;
