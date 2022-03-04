@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,17 +17,18 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
-            android:hint="Search a Keyword"
-            android:inputType="textPersonName" />
+            android:hint="@string/search_a_keyword"
+            android:inputType="textPersonName"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/searchbutton"
             style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:text="Search" />
+            android:text="@string/search" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,8 +46,9 @@
             android:background="#720D5D"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Comics"
-            android:textColor="@color/white" />
+            android:text="@string/comics"
+            android:textColor="@color/white"
+            tools:ignore="NestedWeights" />
 
         <TextView
             android:id="@+id/computer"
@@ -58,7 +59,7 @@
             android:background="#720D5D"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Computer's and Technology"
+            android:text="@string/computer_s_and_technology"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -77,8 +78,9 @@
             android:background="#720D5D"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Cooking"
-            android:textColor="@color/white" />
+            android:text="@string/cooking"
+            android:textColor="@color/white"
+            tools:ignore="NestedWeights" />
 
         <TextView
             android:id="@+id/selfhelp"
@@ -89,7 +91,7 @@
             android:background="#720D5D"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Self - Help"
+            android:text="@string/self_help"
             android:textColor="#F8F3F3" />
     </LinearLayout>
 
@@ -101,13 +103,14 @@
 
         <TextView
             android:id="@+id/developer"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Developer - Ankit Singh" />
+            android:text="@string/developer_ankit_singh"
+            tools:ignore="NestedWeights" />
     </LinearLayout>
 
 </LinearLayout>

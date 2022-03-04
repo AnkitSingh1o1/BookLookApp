@@ -3,4 +3,11 @@
     <string name="no_internet_connection">no_internet_connection</string>
     <string name="no_earthquakes">no_earthquakes</string>
     <string name="no_books">no_books</string>
+    <string name="search_a_keyword">Search a Keyword</string>
+    <string name="search">Search</string>
+    <string name="comics">Comics</string>
+    <string name="computer_s_and_technology">Computer\'s and Technology</string>
+    <string name="cooking">Cooking</string>
+    <string name="self_help">Self - Help</string>
+    <string name="developer_ankit_singh">Developer - Ankit Singh</string>
 </resources>
