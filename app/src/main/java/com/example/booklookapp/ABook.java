@@ -1,9 +1,5 @@
 package com.example.booklookapp;
 
-import org.json.JSONArray;
-
-import java.lang.reflect.Array;
-
 public class ABook {
 
     private String bTitle;
@@ -11,21 +7,19 @@ public class ABook {
     private String bLanguage;
     private String bPageCount;
     private String bPublisher;
-//    private String bCurrencyCode;
-//    private int bPrice;
     private String bSaleability;
+    private String bThumbnailURL;
 
     //Constructor
     public ABook(String title, String authors, String language, String pageCount,
-                 String publisher, String saleability) {
+                 String publisher, String saleability, String thumbnail) {
         bTitle = title;
         bAuthors = authors;
         bLanguage = language;
         bPageCount = pageCount;
         bPublisher = publisher;
-//        bCurrencyCode = currencyCode;
-//        bPrice = price;
         bSaleability = saleability;
+        bThumbnailURL = thumbnail;
     }
 
 
@@ -38,7 +32,7 @@ public class ABook {
     }
 
     public String getLanguageAndPageCount() {
-        String languageAndPageCount = bLanguage+ "\n\n" +bPageCount+ " Pages";
+        String languageAndPageCount = bLanguage + "\n\n" + bPageCount + " Pages";
         return languageAndPageCount;
     }
 
@@ -46,13 +40,11 @@ public class ABook {
         return bPublisher;
     }
 
-//    public String getCurrencyCodeAndPrice() {
-//        String amount = "";
-//        amount += (bPrice+bCurrencyCode);
-//        return amount;
-//    }
-
     public String getSaleability() {
         return bSaleability;
+    }
+
+    public String getThumbnail() {
+        return bThumbnailURL;
     }
 }

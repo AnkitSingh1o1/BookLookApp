@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="160dp"
         android:layout_margin="4dp"
         app:srcCompat="@drawable/sample" />
 
     <LinearLayout
-        android:layout_width="152dp"
+        android:layout_width="180dp"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
         android:orientation="vertical">
@@ -23,12 +23,13 @@
             android:id="@+id/booktitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
             android:layout_marginBottom="8dp"
-            android:text="BookTitle"
             android:ellipsize="end"
+            android:inputType="textMultiLine"
             android:maxLines="1"
-            android:textSize="20sp" />
+            android:text="BookTitle"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/authors"
@@ -36,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="Authors"
+            android:inputType="textMultiLine"
             android:textSize="16sp" />
 
         <TextView
@@ -49,6 +51,7 @@
             android:id="@+id/publisher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
             android:text="Publisher" />
     </LinearLayout>
 
@@ -56,9 +59,11 @@
         android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:gravity="right"
         android:text="Price"
-        android:textSize="16sp" />
+        android:textSize="10sp" />
 
 </LinearLayout>

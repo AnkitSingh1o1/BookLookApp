@@ -1,14 +1,19 @@
 package com.example.booklookapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.UserManager;
 import android.view.View;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +25,15 @@ public class MainActivity extends AppCompatActivity {
         comics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent comicsIntent = new Intent(MainActivity.this,
-                        KeywordActivity.class);
-                //start the new Activity
-                startActivity(comicsIntent);
+                try {
+                    Intent comicsIntent = new Intent(MainActivity.this,
+                            KeywordActivity.class);
+                    //start the new Activity
+                    startActivity(comicsIntent);
+                }
+                catch (UserManager.UserOperationException ex){
+
+                }
             }
         });
 

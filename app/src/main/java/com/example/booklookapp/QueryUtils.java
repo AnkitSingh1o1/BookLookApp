@@ -121,6 +121,8 @@ public final class QueryUtils {
      * parsing a JSON response.
      */
     private static ArrayList<ABook> extractBooks(String jsonResponse) {
+        String imageSecureLink = "https://books.google.com/books/content?id=";
+        String imageSecureLink2 = "&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api";
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(jsonResponse)) {
             return null;
@@ -141,9 +143,12 @@ public final class QueryUtils {
 
             for(int i = 0; i < itemsArray.length(); i++){
                 JSONObject allObjects = itemsArray.getJSONObject(i);
+                String id = allObjects.getString("id");
                 //in volumeInfo
                 JSONObject volumeInfo = allObjects.getJSONObject("volumeInfo");
                 String title = volumeInfo.getString("title");
+                //JSONObject imageLinks = volumeInfo.getJSONObject("imageLinks");
+                String imageURL = imageSecureLink+id+imageSecureLink2+".jpg";
                 String authorName = "";
                 JSONArray authors = volumeInfo.getJSONArray("authors");
                 for(int j = 0; j < authors.length(); j++){
@@ -156,7 +161,7 @@ public final class QueryUtils {
                 JSONObject salesInfo = allObjects.getJSONObject("saleInfo");
                 String saleability = salesInfo.getString("saleability");
 
-                ABook book = new ABook(title,authorName,language,pageCount,publisher,saleability);
+                ABook book = new ABook(title,authorName,language,pageCount,publisher,saleability,imageURL);
                 booksArrayList.add(book);
 
             }
