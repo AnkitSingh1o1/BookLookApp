@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Intent comicsIntent = new Intent(MainActivity.this,
                             KeywordActivity.class);
+                    comicsIntent.putExtra("key", "comics");
                     //start the new Activity
                     startActivity(comicsIntent);
                 }
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent computersIntent = new Intent(MainActivity.this,
                         KeywordActivity.class);
+                computersIntent.putExtra("key", "computers");
                 //start the new Activity
                 startActivity(computersIntent);
             }
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent cookingIntent = new Intent(MainActivity.this,
                         KeywordActivity.class);
+                cookingIntent.putExtra("key","cooking");
                 //start the new Activity
                 startActivity(cookingIntent);
             }
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent selfHelpIntent = new Intent(MainActivity.this,
                         KeywordActivity.class);
+                selfHelpIntent.putExtra("key", "selfhelp");
                 //start the new Activity
                 startActivity(selfHelpIntent);
             }

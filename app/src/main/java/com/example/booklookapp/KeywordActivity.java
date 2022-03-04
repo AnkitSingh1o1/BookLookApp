@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class KeywordActivity extends AppCompatActivity implements LoaderCallbacks<List<ABook>> {
 
@@ -32,14 +33,18 @@ public class KeywordActivity extends AppCompatActivity implements LoaderCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_keyword);
-
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             value = extras.getString("key");
             //The key argument here must match that used in the other activity
         }
+
+        //Set the Label of the Keyword Activity according to the searched Keyword
+        setTitle(value.toUpperCase(Locale.ROOT)+" Books");
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_keyword);
+
 
         ListView booksList = (ListView) findViewById(R.id.keywordlistview);
         bEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
@@ -93,7 +98,7 @@ public class KeywordActivity extends AppCompatActivity implements LoaderCallback
         loadingIndicator.setVisibility(View.GONE);
 
         // Set empty state text to display "No earthquakes found."
-        bEmptyStateTextView.setText(R.string.no_earthquakes);
+        bEmptyStateTextView.setText(R.string.no_books);
 
         // Clear the adapter of previous earthquake data
         //mAdapter.clear();
