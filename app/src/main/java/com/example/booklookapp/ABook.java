@@ -2,6 +2,7 @@ package com.example.booklookapp;
 
 public class ABook {
 
+    private String bInfoLink;
     private String bTitle;
     private String bAuthors;
     private String bLanguage;
@@ -11,8 +12,9 @@ public class ABook {
     private String bPublisher;
 
     //Constructor
-    public ABook(String title, String authors, String language, String pageCount, String saleability,String publisher,
-                 String thumbnail) {
+    public ABook(String infoLink, String title, String authors, String language, String pageCount,
+                 String saleability,String publisher, String thumbnail) {
+        bInfoLink = infoLink;
         bTitle = title;
         bAuthors = authors;
         bLanguage = language;
@@ -47,4 +49,7 @@ public class ABook {
     public String getThumbnail() {
         return bThumbnailURL;
     }
+
+    public String getInfoLink(){ return bInfoLink; }
+
 }

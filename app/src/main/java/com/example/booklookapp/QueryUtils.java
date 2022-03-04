@@ -153,6 +153,13 @@ public final class QueryUtils {
                 //in volumeInfo
                 JSONObject volumeInfo = allObjects.getJSONObject("volumeInfo");
                 String title = volumeInfo.getString("title");
+                String infoLink;
+                if(volumeInfo.has("infoLink")){
+                infoLink = volumeInfo.getString("infoLink");
+                }
+                else{
+                    infoLink = "https://play.google.com/store/books";
+                }
                 String publisher;
                 if(volumeInfo.has("publisher")) {
                     publisher = volumeInfo.getString("publisher");
@@ -190,7 +197,7 @@ public final class QueryUtils {
                 JSONObject salesInfo = allObjects.getJSONObject("saleInfo");
                 String saleability = salesInfo.getString("saleability");
 
-                ABook book = new ABook(title,authorName,language,pageCount,saleability,publisher,imageURL);
+                ABook book = new ABook(infoLink,title,authorName,language,pageCount,saleability,publisher,imageURL);
                 booksArrayList.add(book);
 
             }

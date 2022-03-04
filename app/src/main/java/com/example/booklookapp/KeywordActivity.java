@@ -52,7 +52,7 @@ public class KeywordActivity extends AppCompatActivity implements LoaderCallback
         // so the list can be populated in the user interface
         booksList.setAdapter(bAdapter);
 
-// Get a reference to the ConnectivityManager to check state of network connectivity
+        // Get a reference to the ConnectivityManager to check state of network connectivity
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
 
