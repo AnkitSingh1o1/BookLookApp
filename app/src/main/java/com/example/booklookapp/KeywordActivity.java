@@ -21,7 +21,8 @@ import java.util.List;
 
 public class KeywordActivity extends AppCompatActivity implements LoaderCallbacks<List<ABook>> {
 
-    public static final String GOOGLE_BOOKS_REQUEST_URL = "https://www.googleapis.com/books/v1/volumes?q=android&maxResults=5";
+    public static String GOOGLE_BOOKS_REQUEST_URL = "https://www.googleapis.com/books/v1/volumes?q=";
+   String value = "";
     private static final String LOG_TAG = KeywordActivity.class.getSimpleName();
     /** TextView that is displayed when the list is empty */
     private TextView bEmptyStateTextView;
@@ -33,6 +34,12 @@ public class KeywordActivity extends AppCompatActivity implements LoaderCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keyword);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            value = extras.getString("key");
+            //The key argument here must match that used in the other activity
+        }
 
         ListView booksList = (ListView) findViewById(R.id.keywordlistview);
         bEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
@@ -76,7 +83,7 @@ public class KeywordActivity extends AppCompatActivity implements LoaderCallback
     @Override
     public Loader<List<ABook>> onCreateLoader(int i, Bundle bundle) {
         // Create a new loader for the given URL
-        return new BooksLoader(this, GOOGLE_BOOKS_REQUEST_URL);
+        return new BooksLoader(this, GOOGLE_BOOKS_REQUEST_URL+value);
     }
 
     @Override

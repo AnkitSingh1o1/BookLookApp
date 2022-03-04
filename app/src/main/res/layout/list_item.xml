@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="Authors"
+            android:maxLines="1"
             android:inputType="textMultiLine"
             android:textSize="16sp" />
 
@@ -52,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
+            android:maxLines="1"
             android:text="Publisher" />
     </LinearLayout>
 

@@ -6,19 +6,19 @@ public class ABook {
     private String bAuthors;
     private String bLanguage;
     private String bPageCount;
-    private String bPublisher;
     private String bSaleability;
     private String bThumbnailURL;
+    private String bPublisher;
 
     //Constructor
-    public ABook(String title, String authors, String language, String pageCount,
-                 String publisher, String saleability, String thumbnail) {
+    public ABook(String title, String authors, String language, String pageCount, String saleability,String publisher,
+                 String thumbnail) {
         bTitle = title;
         bAuthors = authors;
         bLanguage = language;
         bPageCount = pageCount;
-        bPublisher = publisher;
         bSaleability = saleability;
+        bPublisher = publisher;
         bThumbnailURL = thumbnail;
     }
 

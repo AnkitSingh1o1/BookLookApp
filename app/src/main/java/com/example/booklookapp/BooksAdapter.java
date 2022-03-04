@@ -56,7 +56,6 @@ public class BooksAdapter extends ArrayAdapter<ABook> {
         TextView bookLanguageAndPageCount = (TextView) convertView.findViewById(R.id.languageandpages);
         bookLanguageAndPageCount.setText(currBook.getLanguageAndPageCount());
 
-        //Set Book Publisher
         TextView bookPublisher = (TextView) convertView.findViewById(R.id.publisher);
         bookPublisher.setText(currBook.getPublisher());
 

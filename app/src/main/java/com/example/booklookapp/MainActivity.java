@@ -7,7 +7,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.UserManager;
+import android.text.Editable;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 
@@ -20,6 +24,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //-------------setting on click listener and calling intent to open respective classes--------------
+
+
+        Button button = findViewById(R.id.searchbutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText nameField = (EditText) findViewById(R.id.searchbar);
+                Editable nameEditable = nameField.getText();
+                String name = nameEditable.toString();
+
+                Intent i = new Intent(MainActivity.this, KeywordActivity.class);
+                i.putExtra("key", name);
+                startActivity(i);
+            }
+        });
+
+
 
         TextView comics = (TextView) findViewById(R.id.comics);
         comics.setOnClickListener(new View.OnClickListener() {

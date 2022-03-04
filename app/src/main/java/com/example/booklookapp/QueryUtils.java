@@ -141,27 +141,56 @@ public final class QueryUtils {
             JSONObject baseJSONResponse = new JSONObject(jsonResponse);
             JSONArray itemsArray = baseJSONResponse.getJSONArray("items");
 
+
+
+
+
+
+
             for(int i = 0; i < itemsArray.length(); i++){
                 JSONObject allObjects = itemsArray.getJSONObject(i);
                 String id = allObjects.getString("id");
                 //in volumeInfo
                 JSONObject volumeInfo = allObjects.getJSONObject("volumeInfo");
                 String title = volumeInfo.getString("title");
-                //JSONObject imageLinks = volumeInfo.getJSONObject("imageLinks");
+                String publisher;
+                if(volumeInfo.has("publisher")) {
+                    publisher = volumeInfo.getString("publisher");
+                }
+                else{
+                    publisher = "PUBLISHER_NOT_KNOWN";
+                }
                 String imageURL = imageSecureLink+id+imageSecureLink2+".jpg";
                 String authorName = "";
-                JSONArray authors = volumeInfo.getJSONArray("authors");
-                for(int j = 0; j < authors.length(); j++){
-                    authorName += authors.getString(j);
+                if(volumeInfo.has("authors")) {
+                    JSONArray authors = volumeInfo.getJSONArray("authors");
+                    for (int j = 0; j < authors.length(); j++)
+                        authorName += authors.getString(j);
                 }
-                String language = volumeInfo.getString("language");
-                String pageCount = volumeInfo.getString("pageCount");
-                String publisher = volumeInfo.getString("publisher");
+                else{
+                    authorName = "NOT_KNOWN";
+                }
+                String language;
+                if(volumeInfo.has("language")) {
+                    language = volumeInfo.getString("language");
+                }
+                else{
+                    language = "LANGUAGE_NOT_KNOWN";
+                }
+                String pageCount;
+                   if(volumeInfo.has("pageCount")) {
+                       pageCount = volumeInfo.getString("pageCount");
+                   }
+                   else
+                   {
+                       pageCount = "NOT_KNOWN";
+                   }
+
                 //in salesInfo
                 JSONObject salesInfo = allObjects.getJSONObject("saleInfo");
                 String saleability = salesInfo.getString("saleability");
 
-                ABook book = new ABook(title,authorName,language,pageCount,publisher,saleability,imageURL);
+                ABook book = new ABook(title,authorName,language,pageCount,saleability,publisher,imageURL);
                 booksArrayList.add(book);
 
             }
