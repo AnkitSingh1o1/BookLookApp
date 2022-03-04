@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
+            android:hint="Search a Keyword"
             android:inputType="textPersonName" />
 
         <Button
@@ -25,47 +26,88 @@
             style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:minHeight="0dp"
-            android:minWidth="0dp"
             android:text="Search" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/comics"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="#E8E7E7"
-        android:padding="16dp"
-        android:text="Comics" />
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/computer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="#E8E7E7"
-        android:padding="16dp"
-        android:text="Computer's and Technology" />
+        <TextView
+            android:id="@+id/comics"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="#720D5D"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Comics"
+            android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/cooking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="#E8E7E7"
-        android:padding="16dp"
-        android:text="Cooking" />
+        <TextView
+            android:id="@+id/computer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="#720D5D"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Computer's and Technology"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/selfhelp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="#E8E7E7"
-        android:padding="16dp"
-        android:text="Self - Help" />
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cooking"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="#720D5D"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Cooking"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/selfhelp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="#720D5D"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Self - Help"
+            android:textColor="#F8F3F3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/developer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Developer - Ankit Singh" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,8 +1,5 @@
 package com.example.booklookapp;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,8 +8,10 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SearchView;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,16 +45,11 @@ public class MainActivity extends AppCompatActivity {
         comics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
                     Intent comicsIntent = new Intent(MainActivity.this,
                             KeywordActivity.class);
                     comicsIntent.putExtra("key", "comics");
                     //start the new Activity
                     startActivity(comicsIntent);
-                }
-                catch (UserManager.UserOperationException ex){
-
-                }
             }
         });
 

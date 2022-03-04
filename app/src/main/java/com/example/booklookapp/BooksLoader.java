@@ -7,11 +7,8 @@ import java.util.List;
 
 public class BooksLoader extends AsyncTaskLoader<List<ABook>> {
 
-    /** Tag for log messages */
-    private static final String LOG_TAG = BooksLoader.class.getName();
-
     /** Query URL */
-    private String bUrl;
+    private final String bUrl;
 
     public BooksLoader(Context context, String url) {
         super(context);

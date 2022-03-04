@@ -3,14 +3,11 @@ package com.example.booklookapp;
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Context;
-import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,7 +21,6 @@ public class KeywordActivity extends AppCompatActivity implements LoaderCallback
 
     public static String GOOGLE_BOOKS_REQUEST_URL = "https://www.googleapis.com/books/v1/volumes?q=";
    String value = "";
-    private static final String LOG_TAG = KeywordActivity.class.getSimpleName();
     /** TextView that is displayed when the list is empty */
     private TextView bEmptyStateTextView;
     private BooksAdapter bAdapter;

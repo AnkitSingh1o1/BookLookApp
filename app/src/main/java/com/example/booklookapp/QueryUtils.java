@@ -11,7 +11,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -168,14 +167,14 @@ public final class QueryUtils {
                     publisher = "PUBLISHER_NOT_KNOWN";
                 }
                 String imageURL = imageSecureLink+id+imageSecureLink2+".jpg";
-                String authorName = "";
+                StringBuilder authorName = new StringBuilder();
                 if(volumeInfo.has("authors")) {
                     JSONArray authors = volumeInfo.getJSONArray("authors");
                     for (int j = 0; j < authors.length(); j++)
-                        authorName += authors.getString(j);
+                        authorName.append(authors.getString(j));
                 }
                 else{
-                    authorName = "NOT_KNOWN";
+                    authorName = new StringBuilder("NOT_KNOWN");
                 }
                 String language;
                 if(volumeInfo.has("language")) {
@@ -197,7 +196,7 @@ public final class QueryUtils {
                 JSONObject salesInfo = allObjects.getJSONObject("saleInfo");
                 String saleability = salesInfo.getString("saleability");
 
-                ABook book = new ABook(infoLink,title,authorName,language,pageCount,saleability,publisher,imageURL);
+                ABook book = new ABook(infoLink,title, authorName.toString(),language,pageCount,saleability,publisher,imageURL);
                 booksArrayList.add(book);
 
             }

@@ -2,14 +2,14 @@ package com.example.booklookapp;
 
 public class ABook {
 
-    private String bInfoLink;
-    private String bTitle;
-    private String bAuthors;
-    private String bLanguage;
-    private String bPageCount;
-    private String bSaleability;
-    private String bThumbnailURL;
-    private String bPublisher;
+    private final String bInfoLink;
+    private final String bTitle;
+    private final String bAuthors;
+    private final String bLanguage;
+    private final String bPageCount;
+    private final String bSaleability;
+    private final String bThumbnailURL;
+    private final String bPublisher;
 
     //Constructor
     public ABook(String infoLink, String title, String authors, String language, String pageCount,
